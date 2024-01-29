@@ -1,7 +1,7 @@
 ﻿namespace Cycles.Helpers.Divisibles;
 
 #region FizzBuzz
-public static class FizzBuzz
+public class FizzBuzz
 {
     #region Task
     /*
@@ -21,15 +21,14 @@ public static class FizzBuzz
     public static string[] AnswersWhile(int max)
     {
         var array = new string[max];
-        var answer = string.Empty;
         var i = 1;
         while (i <= max)
         {
-            answer = i.ToString();
+            var answer = i.ToString();
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out int _) 
+                answer = int.TryParse(answer, out _) 
                             ? "Buzz" 
                             : string.Concat(answer, "Buzz");
             array[i - 1] = answer;
@@ -45,14 +44,13 @@ public static class FizzBuzz
     public static string[] AnswersFor(int max)
     {
         var answers = new string[max];
-        var answer = string.Empty;
         for (int i = 1; i <= max; i++)
         {
-            answer = i.ToString();
+            var answer = i.ToString();
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out int _)
+                answer = int.TryParse(answer, out _)
                             ? "Buzz"
                             : string.Concat(answer, "Buzz");
             answers[i - 1] = answer;
@@ -66,14 +64,13 @@ public static class FizzBuzz
     /// <returns></returns>
     public static IEnumerable<string> AnswersForYield(int max)
     {
-        var answer = string.Empty;
         for (int i = 1; i <= max; i++)
         {
-            answer = i.ToString();
+            var answer = i.ToString();
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out int _)
+                answer = int.TryParse(answer, out _)
                             ? "Buzz"
                             : string.Concat(answer, "Buzz");
             yield return answer;

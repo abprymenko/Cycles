@@ -23,7 +23,7 @@ internal class BinaryGap_Test
     public void GetLongestBinaryGap_Test(int N)
     {
         var longestBinaryGap = BinaryGap.GetLongestBinaryGap(N);
-        Assert.That(_expected.Contains(longestBinaryGap));
+        Assert.That(_expected, Does.Contain(longestBinaryGap));
     }
     [Test]
     [TestCase(15)]//0 => 1111
@@ -33,7 +33,7 @@ internal class BinaryGap_Test
     public void GetLongestBinaryGapQueue_Test(int N)
     {
         var longestBinaryGap = BinaryGap.GetLongestBinaryGapQueue(N);
-        Assert.That(_expected.Contains(longestBinaryGap));
+        Assert.That(_expected, Does.Contain(longestBinaryGap));
     }
     #endregion
 }

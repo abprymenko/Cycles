@@ -1,7 +1,7 @@
 ﻿namespace Cycles.Helpers.SmallestSum;
 
 #region SubArray
-public static class SubArray
+public class SubArray
 {
 
     // Given an array of intergers, please write a function that returns length of the smallest subarray that
