@@ -1,6 +1,6 @@
 ﻿namespace Cycles.Tests.Helpers_Test.Divisibles;
 
-#region MyRegion
+#region FizzBuzz_Test
 internal class FizzBuzz_Test
 {
 	#region Private : Fields

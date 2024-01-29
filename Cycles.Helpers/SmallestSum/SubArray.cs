@@ -3,12 +3,18 @@
 #region SubArray
 public class SubArray
 {
+    #region Public : Methods
+    
+    #region Task
+    /*
+     Given an array of intergers, please write a function that returns length of the smallest subarray that
+     sums to zero.
+     Write a unit test to test the function
+     Example:
+     [4, 3, 2,-3,-2, 1,-1,-2] output is 2
+    */
+    #endregion
 
-    // Given an array of intergers, please write a function that returns length of the smallest subarray that
-    // sums to zero.
-    // Write a unit test to test the function
-    // Example:
-    // [4, 3, 2,-3,-2, 1,-1,-2] output is 2
     /// <summary>
     /// Returns length of the smallest subarray that sums to zero.
     /// </summary>
@@ -32,5 +38,6 @@ public class SubArray
         }
         return minLength == int.MaxValue ? 0 : minLength;
     }
+    #endregion
 }
 #endregion

@@ -3,6 +3,7 @@
 #region Queue
 public static class Queue
 {
+    #region Public : Methods
     /// <summary>
     /// Dequeue zeros from the beginning of the queue.
     /// </summary>
@@ -14,5 +15,6 @@ public static class Queue
             bytes.Dequeue();
         }
     }
+    #endregion
 }
 #endregion

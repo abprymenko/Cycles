@@ -3,6 +3,7 @@
 #region Convert
 public static class Convert
 {
+    #region Public : Methods
     /// <summary>
     /// Decimal to Binary conversion.
     /// </summary>
@@ -19,5 +20,6 @@ public static class Convert
         }
         return bytes;
     }
+    #endregion
 }
 #endregion

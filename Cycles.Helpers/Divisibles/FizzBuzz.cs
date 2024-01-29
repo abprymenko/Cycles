@@ -3,6 +3,8 @@
 #region FizzBuzz
 public class FizzBuzz
 {
+    #region Public : Methods
+    
     #region Task
     /*
     Given an integer n, return a string array answer(1-indexed) where:
@@ -28,9 +30,7 @@ public class FizzBuzz
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out _) 
-                            ? "Buzz" 
-                            : string.Concat(answer, "Buzz");
+                answer = GetBuzz(answer);
             array[i - 1] = answer;
             i++;
         }
@@ -50,9 +50,7 @@ public class FizzBuzz
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out _)
-                            ? "Buzz"
-                            : string.Concat(answer, "Buzz");
+                answer = GetBuzz(answer);
             answers[i - 1] = answer;
         }
         return answers;
@@ -70,11 +68,16 @@ public class FizzBuzz
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = int.TryParse(answer, out _)
-                            ? "Buzz"
-                            : string.Concat(answer, "Buzz");
+                answer = GetBuzz(answer);
             yield return answer;
         }
     }
+    #endregion
+
+    #region Private : Methods
+    private static string GetBuzz(string answer) => int.TryParse(answer, out _)
+                                                        ? "Buzz"
+                                                        : string.Concat(answer, "Buzz");
+    #endregion
 }
 #endregion
