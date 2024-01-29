@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Lessons_Test.Lesson1;
+namespace Cycles.Tests.Lessons_Test.Lesson1;
 
 #region BinaryGap_Test
 internal class BinaryGap_Test
@@ -20,19 +20,9 @@ internal class BinaryGap_Test
     [TestCase(18)]//2 => 10010
     [TestCase(32)]//0 => 100000
     [TestCase(1041)]//5 => 10000010001
-    public void GetLongestBinaryGap_Test(int N)
+    public void LongestBinaryGap_Test(int N)
     {
-        var longestBinaryGap = BinaryGap.GetLongestBinaryGap(N);
-        Assert.That(_expected, Does.Contain(longestBinaryGap));
-    }
-    [Test]
-    [TestCase(15)]//0 => 1111
-    [TestCase(18)]//2 => 10010
-    [TestCase(32)]//0 => 100000
-    [TestCase(1041)]//5 => 10000010001
-    public void GetLongestBinaryGapQueue_Test(int N)
-    {
-        var longestBinaryGap = BinaryGap.GetLongestBinaryGapQueue(N);
+        var longestBinaryGap = BinaryGap.LongestBinaryGap(N);
         Assert.That(_expected, Does.Contain(longestBinaryGap));
     }
     #endregion
