@@ -5,11 +5,11 @@ public static class Convert
 {
     #region Public : Methods
     /// <summary>
-    /// Decimal to Binary conversion.
+    /// <see cref="int"/> to <see cref="byte"/> conversion.
     /// </summary>
-    /// <param name="N"></param>
+    /// <param name="N">Decimal number.</param>
     /// <returns></returns>
-    public static Queue<byte> ToBinary(this int N)
+    public static Queue<byte> ToQueueByte(this int N)
     {
         var bytes = new Queue<byte>();
         while (N > 0)

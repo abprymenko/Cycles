@@ -16,7 +16,7 @@ public class BinaryGap
     public static int LongestBinaryGap(int N)
     {
         int i = 0, longestBinaryGap = 0;
-        var bytes = N.ToBinary();
+        var bytes = N.ToQueueByte();
         bytes.DequeueZeros();
         while (bytes.Count > 0)
         {
