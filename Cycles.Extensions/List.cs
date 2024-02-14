@@ -13,15 +13,15 @@ public static class List
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="tasks">The task list.</param>
-    /// <param name="ct"></param>
+    /// <param name="token"></param>
     /// <returns></returns>
-    public static async IAsyncEnumerable<Task<T>> FirstDoneFirstOut<T>(this List<Task<T>> tasks,
-        [EnumeratorCancellation] CancellationToken ct)
+    public static async IAsyncEnumerable<Task<T>> FirstInFirstOut<T>(this List<Task<T>> tasks,
+        [EnumeratorCancellation] CancellationToken token)
     {
         while (tasks.Count > 0)
         {
-            ct.ThrowIfCancellationRequested();
-            var task = await Task.WhenAny(tasks);
+            token.ThrowIfCancellationRequested();
+            var task = await Task.WhenAny(tasks).ConfigureAwait(false);
             yield return task;
             tasks.Remove(task);
         }

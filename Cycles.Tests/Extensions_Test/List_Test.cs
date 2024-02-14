@@ -32,7 +32,7 @@ internal class List_Test
         try
         {
             cts.Cancel();
-            await foreach (var task in tasks.FirstDoneFirstOut(cts.Token))
+            await foreach (var task in tasks.FirstInFirstOut(cts.Token))
             {
                 results.Add(await task);
             }
@@ -58,7 +58,7 @@ internal class List_Test
         List<int> results = new();
         try
         {
-            await foreach (var task in tasks.FirstDoneFirstOut(CancellationToken.None))
+            await foreach (var task in tasks.FirstInFirstOut(CancellationToken.None))
             {
                 results.Add(await task);
             }
