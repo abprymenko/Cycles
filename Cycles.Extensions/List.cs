@@ -21,7 +21,7 @@ public static class List
         while (tasks.Count > 0)
         {
             token.ThrowIfCancellationRequested();
-            var task = await Task.WhenAny(tasks).ConfigureAwait(false);
+            var task = await Task.WhenAny(tasks);
             yield return task;
             tasks.Remove(task);
         }
