@@ -1,3 +1,4 @@
+global using Cycles.Extensions;
 global using Cycles.Helpers.AsynchronousFibonacci;
 global using Cycles.Helpers.Divisibles;
 global using Cycles.Helpers.SmallestSum;
