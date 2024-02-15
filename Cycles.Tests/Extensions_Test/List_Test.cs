@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Extensions_Test;
+namespace Cycles.Tests.Extensions_Test;
 
 #region List_Test
 internal class List_Test
@@ -16,9 +16,9 @@ internal class List_Test
 
     #region Test : Methods
     [TestCase(0, 100, 1, 50, 2, 150)]
-    public async Task FirstDoneFirstOut_ShouldCancelTasks(int result0, int millisecondsDelay0,
-                                                          int result1, int millisecondsDelay1,
-                                                          int result2, int millisecondsDelay2)
+    public async Task FirstInFirstOut_ShouldCancelTasks(int result0, int millisecondsDelay0,
+                                                        int result1, int millisecondsDelay1,
+                                                        int result2, int millisecondsDelay2)
     {
         var cts = new CancellationTokenSource();
         List<Task<int>> tasks = new()
@@ -44,9 +44,9 @@ internal class List_Test
         }
     }
     [TestCase(0, 150, 1, 99, 2, 50)]
-    public async Task FirstDoneFirstOut_ShouldReturnTasksInOrderDesc(int result0, int millisecondsDelay0,
-                                                                     int result1, int millisecondsDelay1,
-                                                                     int result2, int millisecondsDelay2)
+    public async Task FirstInFirstOut_ShouldReturnTasksInOrderDesc(int result0, int millisecondsDelay0,
+                                                                   int result1, int millisecondsDelay1,
+                                                                   int result2, int millisecondsDelay2)
     {
         List<Task<int>> tasks = new()
         {
