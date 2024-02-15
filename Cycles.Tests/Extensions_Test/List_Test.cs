@@ -21,16 +21,14 @@ internal class List_Test
                                                         int result2, int millisecondsDelay2)
     {
         var cts = new CancellationTokenSource();
-        List<Task<int>> tasks = new()
-        {
-            Task.Delay(millisecondsDelay0).ContinueWith(t0 => result0, cts.Token),
-            Task.Delay(millisecondsDelay1).ContinueWith(t1 => result1, cts.Token),
-            Task.Delay(millisecondsDelay2).ContinueWith(t2 => result2, cts.Token)
-        };
-        // Act
-        var results = new List<int>();
+        List<Task<int>> tasks;
+        List<int> results;
+        CreateInstances(result0, result1, result2,
+                        millisecondsDelay0, millisecondsDelay1, millisecondsDelay2,
+                        out tasks, out results);
         try
         {
+            // Act
             cts.Cancel();
             await foreach (var task in tasks.FirstInFirstOut(cts.Token))
             {
@@ -48,16 +46,14 @@ internal class List_Test
                                                                    int result1, int millisecondsDelay1,
                                                                    int result2, int millisecondsDelay2)
     {
-        List<Task<int>> tasks = new()
-        {
-            Task.Delay(millisecondsDelay0).ContinueWith(t0 => result0),
-            Task.Delay(millisecondsDelay1).ContinueWith(t1 => result1),
-            Task.Delay(millisecondsDelay2).ContinueWith(t2 => result2)
-        };
-        // Act
-        List<int> results = new();
+        List<Task<int>> tasks;
+        List<int> results;
+        CreateInstances(result0, result1, result2,
+                        millisecondsDelay0, millisecondsDelay1, millisecondsDelay2,
+                        out tasks, out results);
         try
         {
+            // Act
             await foreach (var task in tasks.FirstInFirstOut(CancellationToken.None))
             {
                 results.Add(await task);
@@ -69,6 +65,46 @@ internal class List_Test
         {
             Assert.Fail(ex.Message);
         }
+    }
+    [TestCase(0, 1, 2)]
+    public async Task FirstInFirstOut_RandomDelay(int result0, int result1, int result2)
+    {
+        var i = 0;
+        List<Task<int>> tasks;
+        List<int> results;
+        CreateInstances(result0, result1, result2, 
+                        new Random().Next(10, 150), new Random().Next(10, 150), new Random().Next(10, 150),
+                        out tasks, out results);
+        try
+        {
+            // Act
+            await foreach (var task in tasks.FirstInFirstOut(CancellationToken.None))
+            {
+                results.Add(await task);
+                i++;
+            }
+            // Assert
+            Assert.That(results.Distinct().Count(), Is.EqualTo(i));
+        }
+        catch (Exception ex)
+        {
+            Assert.Fail(ex.Message);
+        }
+    }
+    #endregion
+
+    #region Private : Methods
+    private static void CreateInstances(int result0, int result1, int result2,
+                                        int millisecondsDelay0, int millisecondsDelay1, int millisecondsDelay2, 
+                                        out List<Task<int>> tasks, out List<int> results)
+    {
+        tasks = new()
+        {
+            Task.Delay(millisecondsDelay0).ContinueWith(t0 => result0),
+            Task.Delay(millisecondsDelay1).ContinueWith(t1 => result1),
+            Task.Delay(millisecondsDelay2).ContinueWith(t2 => result2)
+        };
+        results = new();
     }
     #endregion
 }
