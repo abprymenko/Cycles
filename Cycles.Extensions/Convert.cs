@@ -1,4 +1,4 @@
-﻿namespace Cycles.Extensions;
+namespace Cycles.Extensions;
 
 #region Convert
 public static class Convert
@@ -11,7 +11,7 @@ public static class Convert
     /// <returns></returns>
     public static Queue<byte> ToQueueByte(this int N)
     {
-        var bytes = new Queue<byte>();
+        Queue<byte> bytes = new();
         while (N > 0)
         {
             var item = (byte)(N & 1);
