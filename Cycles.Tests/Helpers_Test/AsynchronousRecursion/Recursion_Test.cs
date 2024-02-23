@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Helpers_Test.AsynchronousFibonacci;
+﻿namespace Cycles.Tests.Helpers_Test.AsynchronousRecursion;
 
 #region Recursion_Test
 internal class Recursion_Test
@@ -39,7 +39,7 @@ internal class Recursion_Test
     {
         try
         {
-            await foreach (var actDigit in GetSequenceAsync(number, Recursion.FibonacciAsync))
+            await foreach (var actDigit in GetSequenceAsync(number, Fibonacci.FibonacciAsync))
             {
                 if (!_45expected.Contains(actDigit))
                     throw new Exception(_testNotOk);

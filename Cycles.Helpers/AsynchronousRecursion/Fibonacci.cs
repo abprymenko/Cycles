@@ -1,7 +1,7 @@
-﻿namespace Cycles.Helpers.AsynchronousFibonacci;
+﻿namespace Cycles.Helpers.AsynchronousRecursion;
 
-#region Recursion
-public class Recursion
+#region Fibonacci
+public class Fibonacci
 {
     #region Public : Methods
     public static async Task<int> FibonacciAsync(int number)

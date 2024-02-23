@@ -4,9 +4,7 @@
 internal class SubArray_Test
 {
     #region Private : Fields
-    private readonly int _expected0 = 0;
-    private readonly int _expected2 = 2;
-    private readonly int _expected3 = 3;
+    private readonly int[] _expected = new[] { 0, 2, 3, 5 };
     #endregion
 
     #region Setup
@@ -24,7 +22,7 @@ internal class SubArray_Test
     public void MinLength0_Test(int[] array)
     {
         var act = SubArray.MinLength(array);
-        Assert.That(act, Is.EqualTo(_expected0));
+        Assert.That(act, Is.EqualTo(_expected[0]));
     }
     [Test]
     [TestCase(new int[] { 4, 3, 2, -3, 0, -2, 1, -1, -2 })]
@@ -32,14 +30,21 @@ internal class SubArray_Test
     public void MinLength2_Test(int[] array)
     {
         var act = SubArray.MinLength(array);
-        Assert.That(act, Is.EqualTo(_expected2));
+        Assert.That(act, Is.EqualTo(_expected[1]));
     }
     [Test]
     [TestCase(new int[] { 4, 2, 2, -3, 1, 0, 4 })]
     public void MinLength3_Test(int[] array)
     {
         var act = SubArray.MinLength(array);
-        Assert.That(act, Is.EqualTo(_expected3));
+        Assert.That(act, Is.EqualTo(_expected[2]));
+    }
+    [Test]
+    [TestCase(new int[] { 2, 0, 0, 1, -3 })]
+    public void MinLength5_Test(int[] array)
+    {
+        var act = SubArray.MinLength(array);
+        Assert.That(act, Is.EqualTo(_expected[3]));
     }
     #endregion
 }
