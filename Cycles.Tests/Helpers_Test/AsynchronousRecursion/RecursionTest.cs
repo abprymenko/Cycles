@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Helpers_Test.AsynchronousRecursion;
+namespace Cycles.Tests.Helpers_Test.AsynchronousRecursion;
 
 #region RecursionTest
 internal class RecursionTest
@@ -28,7 +28,7 @@ internal class RecursionTest
     [TestCase(35)]//2.9 sec
     [TestCase(40)]//30.9 sec
     [TestCase(45)]//5.7 min
-    public void FibonacciAsync_Exception_Test(int number)
+    public void FibonacciAsyncExceptionTest(int number)
     {
         var ex = Assert.ThrowsAsync<Exception>(async () => await TaskThrowException<int, int>(number, _45Expected, Fibonacci.FibonacciAsync));
         Assert.That(ex.Message, Is.EqualTo(_testOk));
@@ -39,7 +39,7 @@ internal class RecursionTest
     [TestCase(10)]//< 1 ms
     [TestCase(15)]//< 1 ms
     [TestCase(20)]//< 1 ms
-    public void FactorialAsync_Exception_Test(int number)
+    public void FactorialAsyncExceptionTest(int number)
     {
         var ex = Assert.ThrowsAsync<Exception>(async () => await TaskThrowException<ulong, ulong>(number, _20Expected, Factorial.FactorialAsync));
         Assert.That(ex.Message, Is.EqualTo(_testOk));
