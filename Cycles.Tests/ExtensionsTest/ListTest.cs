@@ -1,7 +1,7 @@
-namespace Cycles.Tests.Extensions_Test;
+namespace Cycles.Tests.ExtensionsTest;
 
-#region List_Test
-internal class List_Test
+#region ListTest
+internal class ListTest
 {
     #region Private : Fields
     private readonly int[] _expected = new[] { 2, 1, 0 };
@@ -21,11 +21,9 @@ internal class List_Test
                                                         int result2, int millisecondsDelay2)
     {
         var cts = new CancellationTokenSource();
-        List<Task<int>> tasks;
-        List<int> results;
         CreateInstances(result0, result1, result2,
                         millisecondsDelay0, millisecondsDelay1, millisecondsDelay2,
-                        out tasks, out results);
+                        out var tasks, out var results);
         try
         {
             // Act
@@ -46,11 +44,9 @@ internal class List_Test
                                                                    int result1, int millisecondsDelay1,
                                                                    int result2, int millisecondsDelay2)
     {
-        List<Task<int>> tasks;
-        List<int> results;
         CreateInstances(result0, result1, result2,
                         millisecondsDelay0, millisecondsDelay1, millisecondsDelay2,
-                        out tasks, out results);
+                        out var tasks, out var results);
         try
         {
             // Act
@@ -70,11 +66,9 @@ internal class List_Test
     public async Task FirstInFirstOut_RandomDelay(int result0, int result1, int result2)
     {
         var i = 0;
-        List<Task<int>> tasks;
-        List<int> results;
         CreateInstances(result0, result1, result2, 
                         new Random().Next(10, 150), new Random().Next(10, 150), new Random().Next(10, 150),
-                        out tasks, out results);
+                        out var tasks, out var results);
         try
         {
             // Act
@@ -100,9 +94,9 @@ internal class List_Test
     {
         tasks = new()
         {
-            Task.Delay(millisecondsDelay0).ContinueWith(t0 => result0),
-            Task.Delay(millisecondsDelay1).ContinueWith(t1 => result1),
-            Task.Delay(millisecondsDelay2).ContinueWith(t2 => result2)
+            Task.Delay(millisecondsDelay0).ContinueWith(_0 => result0),
+            Task.Delay(millisecondsDelay1).ContinueWith(_1 => result1),
+            Task.Delay(millisecondsDelay2).ContinueWith(_2 => result2)
         };
         results = new();
     }

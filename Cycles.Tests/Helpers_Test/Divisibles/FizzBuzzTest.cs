@@ -1,10 +1,10 @@
 ﻿namespace Cycles.Tests.Helpers_Test.Divisibles;
 
-#region FizzBuzz_Test
-internal class FizzBuzz_Test
+#region FizzBuzzTest
+internal class FizzBuzzTest
 {
 	#region Private : Fields
-	private readonly string[] _expectedStringArray = new string[]
+	private readonly string[] _expectedStringArray = new[]
 	{
 		"1"
 		,"2"

@@ -1,7 +1,7 @@
 ﻿namespace Cycles.Tests.Helpers_Test.SmallestSum;
 
-#region SubArray_Test
-internal class SubArray_Test
+#region SubArrayTest
+internal class SubArrayTest
 {
     #region Private : Fields
     private readonly int[] _expected = new[] { 0, 2, 3, 5 };

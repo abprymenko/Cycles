@@ -22,7 +22,7 @@ public class SubArray
     /// <returns></returns>
     public static int MinLength(int[] array)
     {
-        int minLength = int.MaxValue;
+        var minLength = int.MaxValue;
         for (var i = 0; i < array.Length; i++)//record
         {
             var sum = array[i];

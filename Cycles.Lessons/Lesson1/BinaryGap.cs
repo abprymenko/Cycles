@@ -11,12 +11,12 @@ public class BinaryGap
     /// <summary>
     /// Obtaining the longest binary gap by using <seealso cref="Queue{T}"/>.
     /// </summary>
-    /// <param name="N">Input parameter to convert to binary number system.</param>
+    /// <param name="n">Input parameter to convert to binary number system.</param>
     /// <returns><see cref="int"/></returns>
-    public static int LongestBinaryGap(int N)
+    public static int LongestBinaryGap(int n)
     {
         int i = 0, longestBinaryGap = 0;
-        var bytes = N.ToQueueByte();
+        var bytes = n.ToQueueByte();
         bytes.DequeueZeros();
         while (bytes.Count > 0)
         {
