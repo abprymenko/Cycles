@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Helpers_Test.Divisibles;
+namespace Cycles.Tests.Helpers_Test.Divisibles;
 
 #region FizzBuzzTest
 internal class FizzBuzzTest
@@ -79,21 +79,21 @@ internal class FizzBuzzTest
     #region Test : Methods
     [Test]
     [TestCase(60)]
-	public void AnswersWhile_Test(int max)//14 ms per 4 tests in line
+	public void AnswersWhileTest(int max)//14 ms per 4 tests in line
 	{
 		var actStringArray = FizzBuzz.AnswersWhile(max);
 		Assert.That(actStringArray, Is.EquivalentTo(_expectedStringArray));
 	}
     [Test]
     [TestCase(60)]
-    public void AnswersFor_Test(int max)//13 ms per 4 tests in line
+    public void AnswersForTest(int max)//13 ms per 4 tests in line
     {
         var actStringArray = FizzBuzz.AnswersFor(max);
         Assert.That(actStringArray, Is.EquivalentTo(_expectedStringArray));
     }
     [Test]
     [TestCase(60)]
-    public void AnswersForYield_Test(int max)//16 ms per 4 tests in line
+    public void AnswersForYieldTest(int max)//16 ms per 4 tests in line
     {
 		var i = 0;
 		foreach (var answer in FizzBuzz.AnswersForYield(max))
