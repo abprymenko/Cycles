@@ -1,4 +1,4 @@
-﻿namespace Cycles.Tests.Helpers_Test.SubstringUniqueCharacters;
+namespace Cycles.Tests.Helpers_Test.SubstringUniqueCharacters;
 
 #region SlidingWindowApproachTest
 internal class SlidingWindowApproachTest
@@ -12,7 +12,7 @@ internal class SlidingWindowApproachTest
     [SetUp]
     public void Setup()
     {
-        _expectedCount ++;
+        _expectedCount++;
     }
     #endregion
 
