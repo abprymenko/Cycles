@@ -13,31 +13,31 @@ public class SlidingWindowApproach
     /// <returns></returns>
     public static string GetLongestUniqueSubstring(string input)
     {
-        var longestSubstring = string.Empty;
+        var longestUniqueSubstring = string.Empty;
         var currentSubstring = string.Empty;
-        var uniqueChars = new HashSet<char>();
-        foreach (var c in input)
+        var uniqueCharacters = new HashSet<char>();
+        foreach (var character in input)
         {
-            if (uniqueChars.Contains(c))
+            if (uniqueCharacters.Contains(character))
             {
-                LongestSubstring(currentSubstring, ref longestSubstring);
-                var index = currentSubstring.IndexOf(c);
+                LongestUniqueSubstring(currentSubstring, ref longestUniqueSubstring);
+                var index = currentSubstring.IndexOf(character);
                 currentSubstring = CurrentSubstring(currentSubstring, index);
             }
-            currentSubstring += c;
-            uniqueChars.Add(c);
+            currentSubstring += character;
+            uniqueCharacters.Add(character);
         }
-        LongestSubstring(currentSubstring, ref longestSubstring);
-        return longestSubstring;
+        LongestUniqueSubstring(currentSubstring, ref longestUniqueSubstring);
+        return longestUniqueSubstring;
     }
     #endregion
 
     #region Private : Methods
-    private static void LongestSubstring(string currentSubstring, ref string longestSubstring)
+    private static void LongestUniqueSubstring(string currentSubstring, ref string longestUniqueSubstring)
     {
-        if (currentSubstring.Length > longestSubstring.Length)
+        if (currentSubstring.Length > longestUniqueSubstring.Length)
         {
-            longestSubstring = currentSubstring;
+            longestUniqueSubstring = currentSubstring;
         }
     }
     /// <summary>

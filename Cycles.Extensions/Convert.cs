@@ -7,16 +7,16 @@ public static class Convert
     /// <summary>
     /// <see cref="int"/> to <see cref="byte"/> conversion.
     /// </summary>
-    /// <param name="N">Decimal number.</param>
+    /// <param name="n">Decimal number.</param>
     /// <returns></returns>
-    public static Queue<byte> ToQueueByte(this int N)
+    public static Queue<byte> ToQueueByte(this int n)
     {
         Queue<byte> bytes = new();
-        while (N > 0)
+        while (n > 0)
         {
-            var item = (byte)(N & 1);
+            var item = (byte)(n & 1);
             bytes.Enqueue(item);
-            N >>= 1;
+            n >>= 1;
         }
         return bytes;
     }

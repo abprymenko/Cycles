@@ -1,12 +1,13 @@
-namespace Cycles.Tests.Helpers_Test.Divisibles;
+namespace Cycles.Tests.HelpersTest.Divisibles;
 
 #region FizzBuzzTest
 internal class FizzBuzzTest
 {
 	#region Private : Fields
-	private readonly string[] _expectedStringArray = new[]
-	{
-		"1"
+	private const int Argument = 60;
+	private readonly string[] _expectedStringArray =
+    [
+        "1"
 		,"2"
 		,"Fizz"
 		,"4"
@@ -66,7 +67,7 @@ internal class FizzBuzzTest
 		,"58"
 		,"59"
 		,"FizzBuzz"
-    };
+    ];
     #endregion
 
     #region Setup
@@ -77,30 +78,37 @@ internal class FizzBuzzTest
     #endregion
 
     #region Test : Methods
-    [Test]
-    [TestCase(60)]
-	public void AnswersWhileTest(int max)//14 ms per 4 tests in line
+    [TestCaseSource(nameof(Max))]
+	public void AnswersWhileTest(int max)
 	{
 		var actStringArray = FizzBuzz.AnswersWhile(max);
 		Assert.That(actStringArray, Is.EquivalentTo(_expectedStringArray));
 	}
-    [Test]
-    [TestCase(60)]
-    public void AnswersForTest(int max)//13 ms per 4 tests in line
+    [TestCaseSource(nameof(Max))]
+    public void AnswersForTest(int max)
     {
         var actStringArray = FizzBuzz.AnswersFor(max);
         Assert.That(actStringArray, Is.EquivalentTo(_expectedStringArray));
     }
-    [Test]
-    [TestCase(60)]
-    public void AnswersForYieldTest(int max)//16 ms per 4 tests in line
+    [TestCaseSource(nameof(Max))]
+    public void AnswersForYieldTest(int max)
     {
-		var i = 0;
-		foreach (var answer in FizzBuzz.AnswersForYield(max))
-		{
+        var i = 0;
+        foreach (var answer in FizzBuzz.AnswersForYield(max))
+        {
             Assert.That(answer, Is.EquivalentTo(_expectedStringArray[i]));
             i++;
-		}
+        }
+    }
+    #endregion
+
+    #region Test case sources
+    private static IEnumerable<TestCaseData> Max
+    {
+        get
+        {
+            yield return new TestCaseData(Argument).SetName("Argument");
+        }
     }
     #endregion
 }

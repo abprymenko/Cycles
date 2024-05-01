@@ -7,7 +7,7 @@ public class SubArray
     
     #region Task
     /*
-     Given an array of intergers, please write a function that returns length of the smallest subarray that
+     Given an array of integers, please write a function that returns length of the smallest sub array that
      sums to zero.
      Write a unit test to test the function
      Example:
@@ -16,9 +16,9 @@ public class SubArray
     #endregion
 
     /// <summary>
-    /// Returns length of the smallest subarray that sums to zero.
+    /// Returns length of the smallest sub array that sums to zero.
     /// </summary>
-    /// <param name="array">Given an array of intergers.</param>
+    /// <param name="array">Given an array of integers.</param>
     /// <returns></returns>
     public static int MinLength(int[] array)
     {
