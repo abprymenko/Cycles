@@ -1,6 +1,15 @@
-﻿namespace Cycles.Tests.HelpersTest.ReachDestination;
+namespace Cycles.Tests.HelpersTest.ReachDestination;
 
 #region DestinationPointTest
+/*TASK
+ *You are given the array paths, where paths[i] = [pointAi, pointBi] means there exists a direct path going from A-i point to B-i point.
+ *It is guaranteed that the graph of paths forms a line without any loop, therefore, there will be exactly one destination point.
+ *Example:
+ *Input: paths = [["PointA","PointB"],["PointB","PointC"], ["PointC", "PointD"]]
+ *Output: "PointD"
+ *Explanation: Starting at "PointA" point you will reach "PointD" point which is the destination point. 
+ *Your trip consist of: "PointA" -> "PointB" -> "PointC" -> "PointD"
+ */
 internal class DestinationPointTest
 {
     #region Private : Fields
