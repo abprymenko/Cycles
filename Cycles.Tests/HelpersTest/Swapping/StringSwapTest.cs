@@ -43,10 +43,10 @@ internal class StringSwapTest
     {
         get
         {
-            yield return new TestCaseData(SwapStringArgument[0,0], SwapStringArgument[0, 1]).SetName("SwapStringArgument0");
-            yield return new TestCaseData(SwapStringArgument[1,0], SwapStringArgument[1, 1]).SetName("SwapStringArgument1");
-            yield return new TestCaseData(SwapStringArgument[2,0], SwapStringArgument[2, 1]).SetName("SwapStringArgument2");
-            yield return new TestCaseData(SwapStringArgument[3,0], SwapStringArgument[3, 1]).SetName("SwapStringArgument3");
+            yield return new TestCaseData(SwapStringArgument[0,0], SwapStringArgument[0,1]).SetName("SwapStringArgument0");
+            yield return new TestCaseData(SwapStringArgument[1,0], SwapStringArgument[1,1]).SetName("SwapStringArgument1");
+            yield return new TestCaseData(SwapStringArgument[2,0], SwapStringArgument[2,1]).SetName("SwapStringArgument2");
+            yield return new TestCaseData(SwapStringArgument[3,0], SwapStringArgument[3,1]).SetName("SwapStringArgument3");
         }
     }
     #endregion
