@@ -1,4 +1,4 @@
-﻿namespace Cycles.Helpers.Swapping;
+namespace Cycles.Helpers.Swapping;
 
 #region StringSwap
 public class StringSwap
@@ -9,8 +9,8 @@ public class StringSwap
     /// </summary>
     /// <param name="str1"></param>
     /// <param name="str2"></param>
-    /// <returns>Return true if it is possible to make both strings equal by performing <br/>
-    /// at most one string swap on exactly one of the strings. Otherwise, return false.</returns>
+    /// <returns>True if it is possible to make both strings equal by performing <br/>
+    /// at most one string swap on exactly one of the strings. Otherwise,false.</returns>
     public static bool CheckSwap(string str1, string str2)
     {
         var count = 0;
