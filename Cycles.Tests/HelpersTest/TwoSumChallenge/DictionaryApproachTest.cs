@@ -89,16 +89,16 @@ namespace Cycles.Tests.HelpersTest.TwoSumChallenge
         {
             get
             {
-                var rows = TwoSumNumbersArgument.GetUpperBound(0) + 1;
+                var rows = TwoSumNumbersArgument.GetLength(0);
                 for (int i = 0; i < rows;)
                 {
                     var list = new List<int>();
                     var target = TwoSumNumbersArgument[i, 0];
-                    while (i < rows && TwoSumNumbersArgument[i, 0] == target)
+                    do
                     {
                         list.Add(TwoSumNumbersArgument[i, 1]);
                         i++;
-                    }
+                    } while (i < rows && TwoSumNumbersArgument[i, 0] == target);
                     var array = list.ToArray();
                     yield return new TestCaseData(array, target).SetName($"TwoSumNumbersArgument{target}");
                 }
