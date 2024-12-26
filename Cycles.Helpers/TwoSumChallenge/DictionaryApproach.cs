@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System;
-
 namespace Cycles.Helpers.TwoSumChallenge
 {
     #region DictionaryApproach
@@ -26,11 +23,11 @@ namespace Cycles.Helpers.TwoSumChallenge
                 var difference = minuend - subtrahend;
                 if (valueIndices.TryGetValue(difference, out int index))
                 {
-                  return new int[]{index, i};
+                  return [index, i];
                 }
                 valueIndices.TryAdd(subtrahend, i);
             }
-            return new int[]{-1,-1};
+            return [-1,-1];
         }
         #endregion
     }
