@@ -1,10 +1,10 @@
 global using Cycles.Extensions;
-global using Cycles.Helpers.AsynchronousRecursion;
-global using Cycles.Helpers.Divisibles;
-global using Cycles.Helpers.ReachDestination;
-global using Cycles.Helpers.SmallestSum;
-global using Cycles.Helpers.SubstringUniqueCharacters;
-global using Cycles.Helpers.Swapping;
-global using Cycles.Helpers.ValidationMatrix;
+global using Cycles.LeetCodeTasks.AsynchronousRecursion;
+global using Cycles.LeetCodeTasks.Divisibles;
+global using Cycles.LeetCodeTasks.ReachDestination;
+global using Cycles.LeetCodeTasks.SmallestSum;
+global using Cycles.LeetCodeTasks.SubstringUniqueCharacters;
+global using Cycles.LeetCodeTasks.Swapping;
+global using Cycles.LeetCodeTasks.ValidationMatrix;
 global using Cycles.Lessons.Lesson1;
 global using NUnit.Framework;

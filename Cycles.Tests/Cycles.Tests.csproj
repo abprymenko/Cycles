@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -20,8 +20,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cycles.Helpers\Cycles.Helpers.csproj" />
-    <ProjectReference Include="..\Cycles.Lessons\Cycles.Lessons.csproj" />
+    <ProjectReference Include="..\Cycles.Helpers\Cycles.LeetCodeTasks.csproj" />
+    <ProjectReference Include="..\Cycles.Lessons\Cycles.TeslaLessons.csproj" />
     <ProjectReference Include="..\Cycles.Patterns\Cycles.Patterns.csproj" />
   </ItemGroup>
 </Project>

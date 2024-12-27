@@ -1,4 +1,4 @@
-﻿using Cycles.Helpers.TwoSumChallenge;
+﻿using Cycles.LeetCodeTasks.TwoSumChallenge;
 using System.Diagnostics;
 
 namespace Cycles.Tests.HelpersTest.TwoSumChallenge

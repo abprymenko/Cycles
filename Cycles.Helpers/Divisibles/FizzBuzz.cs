@@ -1,4 +1,4 @@
-namespace Cycles.Helpers.Divisibles;
+namespace Cycles.LeetCodeTasks.Divisibles;
 
 #region FizzBuzz
 public class FizzBuzz

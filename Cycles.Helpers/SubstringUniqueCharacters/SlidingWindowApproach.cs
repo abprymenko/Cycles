@@ -1,4 +1,4 @@
-﻿namespace Cycles.Helpers.SubstringUniqueCharacters;
+﻿namespace Cycles.LeetCodeTasks.SubstringUniqueCharacters;
 
 #region SlidingWindowApproach
 public class SlidingWindowApproach

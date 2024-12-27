@@ -1,4 +1,4 @@
-namespace Cycles.Helpers.ReachDestination;
+namespace Cycles.LeetCodeTasks.ReachDestination;
 
 #region DestinationPoint
 public static class DestinationPoint

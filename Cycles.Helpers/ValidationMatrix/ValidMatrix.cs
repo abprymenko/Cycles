@@ -1,4 +1,4 @@
-﻿namespace Cycles.Helpers.ValidationMatrix;
+﻿namespace Cycles.LeetCodeTasks.ValidationMatrix;
 
 #region ValidMatrix
 public static class ValidMatrix

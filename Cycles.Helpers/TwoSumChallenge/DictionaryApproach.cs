@@ -1,4 +1,4 @@
-namespace Cycles.Helpers.TwoSumChallenge
+namespace Cycles.LeetCodeTasks.TwoSumChallenge
 {
     #region DictionaryApproach
     public static class DictionaryApproach

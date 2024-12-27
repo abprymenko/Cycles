@@ -1,4 +1,4 @@
-﻿namespace Cycles.Helpers.SmallestSum;
+﻿namespace Cycles.LeetCodeTasks.SmallestSum;
 
 #region SubArray
 public class SubArray

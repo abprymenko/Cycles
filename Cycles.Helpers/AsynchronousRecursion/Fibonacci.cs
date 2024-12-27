@@ -1,4 +1,4 @@
-namespace Cycles.Helpers.AsynchronousRecursion;
+namespace Cycles.LeetCodeTasks.AsynchronousRecursion;
 
 #region Fibonacci
 public class Fibonacci

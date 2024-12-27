@@ -1,4 +1,4 @@
-namespace Cycles.Helpers.Swapping;
+namespace Cycles.LeetCodeTasks.Swapping;
 
 #region StringSwap
 public class StringSwap
