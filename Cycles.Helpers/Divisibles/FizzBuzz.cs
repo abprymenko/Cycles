@@ -1,4 +1,4 @@
-﻿namespace Cycles.Helpers.Divisibles;
+namespace Cycles.Helpers.Divisibles;
 
 #region FizzBuzz
 public class FizzBuzz
@@ -64,12 +64,12 @@ public class FizzBuzz
     {
         for (int i = 1; i <= max; i++)
         {
-            var answer = i.ToString();
+            var answer = string.Empty;
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = GetBuzz(answer);
-            yield return answer;
+                answer = string.Concat(answer, "Buzz");
+            yield return string.IsNullOrEmpty(answer) ? i.ToString() : answer;
         }
     }
     #endregion
