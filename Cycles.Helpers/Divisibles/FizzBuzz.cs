@@ -56,7 +56,7 @@ public class FizzBuzz
         return answers;
     }
     /// <summary>
-    /// Gets answers by usings for cycle and yield.
+    ///     Gets answers by usings the for loop and the yield operator.
     /// </summary>
     /// <param name="max">Max range.</param>
     /// <returns></returns>
