@@ -22,19 +22,19 @@ public class FizzBuzz
     /// <returns></returns>
     public static string[] AnswersWhile(int max)
     {
-        var array = new string[max];
+        var answers = new string[max];
         var i = 1;
         while (i <= max)
         {
-            var answer = i.ToString();
+            var answer = string.Empty;
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = GetBuzz(answer);
-            array[i - 1] = answer;
+                answer += "Buzz";
+            answers[i - 1] = string.IsNullOrEmpty(answer) ? i.ToString() : answer;
             i++;
         }
-        return array;
+        return answers;
     }
     /// <summary>
     /// Gets answers by usings for cycle.
@@ -46,12 +46,12 @@ public class FizzBuzz
         var answers = new string[max];
         for (int i = 1; i <= max; i++)
         {
-            var answer = i.ToString();
+            var answer = string.Empty;
             if (i % 3 == 0)
                 answer = "Fizz";
             if (i % 5 == 0)
-                answer = GetBuzz(answer);
-            answers[i - 1] = answer;
+                answer += "Buzz";
+            answers[i - 1] = string.IsNullOrEmpty(answer) ? i.ToString() : answer;
         }
         return answers;
     }
@@ -72,12 +72,6 @@ public class FizzBuzz
             yield return string.IsNullOrEmpty(answer) ? i.ToString() : answer;
         }
     }
-    #endregion
-
-    #region Private : Methods
-    private static string GetBuzz(string answer) => int.TryParse(answer, out _)
-                                                        ? "Buzz"
-                                                        : string.Concat(answer, "Buzz");
     #endregion
 }
 #endregion
