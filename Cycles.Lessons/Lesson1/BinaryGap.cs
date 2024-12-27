@@ -1,4 +1,4 @@
-namespace Cycles.Lessons.Lesson1;
+namespace Cycles.TeslaLessons.Lesson1;
 
 #region Usings
 using Cycles.Extensions;

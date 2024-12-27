@@ -6,5 +6,5 @@ global using Cycles.LeetCodeTasks.SmallestSum;
 global using Cycles.LeetCodeTasks.SubstringUniqueCharacters;
 global using Cycles.LeetCodeTasks.Swapping;
 global using Cycles.LeetCodeTasks.ValidationMatrix;
-global using Cycles.Lessons.Lesson1;
+global using Cycles.TeslaLessons.Lesson1;
 global using NUnit.Framework;
