@@ -22,5 +22,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Cycles.Helpers\Cycles.Helpers.csproj" />
     <ProjectReference Include="..\Cycles.Lessons\Cycles.Lessons.csproj" />
+    <ProjectReference Include="..\Cycles.Patterns\Cycles.Patterns.csproj" />
   </ItemGroup>
 </Project>
