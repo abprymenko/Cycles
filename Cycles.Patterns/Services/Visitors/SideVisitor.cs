@@ -20,17 +20,17 @@ public class SideVisitor : ISideVisitor<ISide>
     #endregion
 
     #region Public : Methods
-    public Task VisitSide(ISide side, int? count, int? length, int? delay)
+    public async Task VisitSide(ISide side, int? count, int? length, int? delay)
     {
         var result = _parametersValidator.ValidateAndExtractIntegers(count, length, delay);
-        return Task.Run(() => FillOutObjects(side, result[0], result[1], result[2]));
+        await ProcessData(side, result[0], result[1], result[2]);
     }
     #endregion
 
     #region Private : Methods
-    public virtual void FillOutObjects(ISide side, int count, int length, int delay)
+    private static async Task ProcessData(ISide side, int count, int length, int delay)
     {
-        side.FillOutObjects(count, length, delay);
+        await side.ProcessData(count, length, delay);
     }
     #endregion
 }

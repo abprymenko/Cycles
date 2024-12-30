@@ -50,7 +50,7 @@ internal class VisitorsTest
         // Act
         _stopwatch.Start();
         if (sides is not ISide[] enumerable || enumerable.Length != args.Lengths.Count)
-            throw new ArgumentException("There was passed wrong parameter!", nameof(sides));
+            throw new ArgumentException("There was passed a wrong parameter!", nameof(sides));
         try
         {
             var tasks = new ConcurrentQueue<Task>();
@@ -59,7 +59,7 @@ internal class VisitorsTest
             var cancellationTokenSource = new CancellationTokenSource();
             var token = cancellationTokenSource.Token;
             //var i = 0;
-            await foreach (var task in DownloadData(_visitor, enumerable, args, token))
+            await foreach (var task in ProcessData(_visitor, enumerable, args, token))
             {
                 //if (i == 0)
                 //{
@@ -93,22 +93,22 @@ internal class VisitorsTest
             // Assert
             Assert.Multiple(() =>
             {
-                Assert.That(enumerable?[0].Objects, Has.Count.EqualTo(_expected),
+                Assert.That(enumerable?[0].Data, Has.Count.EqualTo(_expected),
                     string.Format(Formats.FailureMessage, "Objects", nameof(_expected), _expected,
-                        enumerable?[0].Objects.Count, firstStop, secondStop, enumerable?[1].Objects.Count));
-                Assert.That(enumerable?[1].Objects, Has.Count.EqualTo(_expected),
+                        enumerable?[0].Data.Count, firstStop, secondStop, enumerable?[1].Data.Count));
+                Assert.That(enumerable?[1].Data, Has.Count.EqualTo(_expected),
                     string.Format(Formats.FailureMessage, "Objects", nameof(_expected), _expected,
-                        enumerable?[1].Objects.Count, firstStop, secondStop, enumerable?[0].Objects.Count));
+                        enumerable?[1].Data.Count, firstStop, secondStop, enumerable?[0].Data.Count));
             });
             var thirdStop = _stopwatch.ElapsedMilliseconds;
             _stopwatch.Stop();
-            Console.WriteLine(Formats.HappyMessage, enumerable?[0].Objects.Count, enumerable?[1].Objects.Count,
+            Console.WriteLine(Formats.HappyMessage, enumerable?[0].Data.Count, enumerable?[1].Data.Count,
                 firstStop, secondStop, thirdStop);
         }
         catch (OperationCanceledException oce)
         {
             Assert.Pass(string.Format(Formats.PassMessage, oce.Message, _stopwatch.ElapsedMilliseconds,
-                enumerable?[0].Objects.Count, enumerable?[1].Objects.Count));
+                enumerable?[0].Data.Count, enumerable?[1].Data.Count));
             _stopwatch.Stop();
         }
         catch (Exception ex)
@@ -119,7 +119,7 @@ internal class VisitorsTest
     #endregion
 
     #region Private : Methods
-    private static async IAsyncEnumerable<Task> DownloadData(ISideVisitor<ISide> visitor, ISide[] enumerable, IArguments args, [EnumeratorCancellation] CancellationToken token)
+    private static async IAsyncEnumerable<Task> ProcessData(ISideVisitor<ISide> visitor, ISide[] enumerable, IArguments args, [EnumeratorCancellation] CancellationToken token)
     {
         var tcs = new TaskCompletionSource<Task>();
         for (var i = 0; i < args?.Lengths?.Count; i++)
@@ -129,7 +129,7 @@ internal class VisitorsTest
                 if (token.IsCancellationRequested)
                 {
                     var addI = i % 2 == 0 ? 0 : 1;
-                    tcs.SetException(new OperationCanceledException($"The DownloadData process has been interrupted on the current task with ID#{i+j+ addI+ 1} out of {args.Lengths?.Count + enumerable.Length} tasks."));
+                    tcs.SetException(new OperationCanceledException($"The data process has been interrupted on the current task with ID#{i+j+ addI+ 1} out of {args.Lengths?.Count + enumerable.Length} tasks."));
                     yield return await tcs.Task;
                 }
                 yield return enumerable[j].AcceptVisitor(visitor, args.Counts?[i], args.Lengths?[j][i], args.Delays?[j]);

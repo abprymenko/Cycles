@@ -4,7 +4,7 @@
 public class SideB : BaseSide
 {
     #region Public : Methods
-    public override void FillOutObjects(int count, int length, int delay)
+    public override async Task ProcessData(int count, int length, int delay)
     {
         var array = new object[length];
         int i = 0, j = 0;
@@ -12,14 +12,14 @@ public class SideB : BaseSide
         {
             while (j < length)
             {
-                array[j] = j;
+                array[j] = $"{j}/{length} - {count}.";
                 j++;
             }
-            lock (Objects)
+            lock (Data)
             {
-                Objects.Add(array);
+                Data.Add(array);
             }
-            Task.Delay(delay).Wait();
+            await Task.Delay(delay);
             i++;
         }
     }
