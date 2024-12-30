@@ -24,10 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cycles.Extensions\Cycles.Extensions.csproj" />
-    <ProjectReference Include="..\Cycles.Helpers\Cycles.LeetCodeTasks.csproj" />
-    <ProjectReference Include="..\Cycles.Lessons\Cycles.TeslaLessons.csproj" />
+    <ProjectReference Include="..\Cycles.LeetCodeTasks\Cycles.LeetCodeTasks.csproj" />
     <ProjectReference Include="..\Cycles.Patterns\Cycles.Patterns.csproj" />
+    <ProjectReference Include="..\Cycles.TeslaLessons\Cycles.TeslaLessons.csproj" />
   </ItemGroup>
 
 </Project>
