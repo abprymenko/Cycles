@@ -1,4 +1,4 @@
-﻿namespace Cycles.Patterns.Services.Sides;
+namespace Cycles.Patterns.Services.Sides;
 
 #region Usings
 using Cycles.Patterns.Contracts.Infrastructure.Visitors;
@@ -16,7 +16,7 @@ public abstract class BaseSide : ISide
     public abstract Task ProcessData(int count, int length, int delay);
     public virtual async Task AcceptVisitor(ISideVisitor<ISide> visitor, int? count, int? length, int? delay)
     {
-        await visitor.VisitSide(this, count, length, delay);
+        await visitor.TransactProc(this, count, length, delay);
     }
     #endregion
 }
