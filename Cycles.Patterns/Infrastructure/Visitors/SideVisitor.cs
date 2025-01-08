@@ -1,4 +1,4 @@
-﻿namespace Cycles.Patterns.Infrastructure.Visitors;
+namespace Cycles.Patterns.Infrastructure.Visitors;
 
 #region Usings
 using Cycles.Patterns.Managers.Validators;
@@ -20,7 +20,7 @@ public class SideVisitor : ISideVisitor<ISide>
     #endregion
 
     #region Public : Methods
-    public async Task VisitSide(ISide side, int? count, int? length, int? delay)
+    public async Task TransactProc(ISide side, int? count, int? length, int? delay)
     {
         var result = _parametersValidator.ValidateAndExtractIntegers(count, length, delay);
         await ProcessData(side, result[0], result[1], result[2]);
